@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Comment App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" rel="stylesheet">-->
+    <!--<link href="files/vendor/jquery/jquery.min.js" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="files/css/logo-nav.css" rel="stylesheet">
+    <link href="files/css/shkawan.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="https://placehold.it/300x60/09f/fff?text=Version: {{params.version}}" width="230" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <a href><h1 class="mt-5">Comment App</h1></a>
+      <p>Leave your comment.</p>
+      <div>
+        <form method="POST">
+        <input type="text" name="comment"/ size=50> 
+        <input type="submit"/>
+        </form>
+      </div>
+    </div>
+    <hr/>
+    <div class="container">
+    {%- if params.data -%}
+    <table>
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+    </tr>
+      {% for v in params.data -%}
+    <tr>
+      <th>{{ v.name -}}</th>
+      <td>{{ v.comment -}}</td>
+    </tr>
+      {% endfor -%}
+    </table>
+    {%- endif -%}
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="files/vendor/jquery/jquery.min.js"></script>
+    <script src="files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

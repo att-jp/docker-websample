@@ -1,0 +1,46 @@
+table {
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+table th,
+table td {
+  border-left: 1px solid #999;
+  border-bottom: 1px solid #999;
+  padding: 10px;
+}
+table th {
+  background-color: #eee;
+}
+
+@media screen and (max-width: 400px) {
+  table {
+    display: block;
+    position: relative;
+  }
+  table thead {
+    display: block;
+    float: left;
+  }
+  table tbody {
+    display: block;
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  table th,
+  table td {
+    display: block;
+  }
+  table tr {
+    display: inline-block;
+  }
+  table tbody tr {
+    margin-right: -5px;
+  }
+}
+
